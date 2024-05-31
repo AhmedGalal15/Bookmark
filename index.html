@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="css/fonts/css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1
+        class="title text-center mt-5 mx-auto position-relative pacifico-regular">
+        Bookmarker
+      </h1>
+      <div class="bookmarkinput mt-5 py-4 mb-3">
+        <div
+          class="bookmarktitle d-flex align-items-center justify-content-center mb-4">
+          <i class="fas fa-bookmark me-3"></i>
+          <h2>Bookmark your favorite sites</h2>
+          <i class="fas fa-bookmark ms-3"></i>
+        </div>
+        <i class="fas fa-book-bookmark me-3"></i>
+        <label for="siteNameInput" class="mb-3 fw-bold">Site Name</label>
+        <input
+          type="text"
+          name="bookmarkName"
+          oninput="validation('siteNameInput', 'name','nameAlert' );"
+          id="siteNameInput"
+          placeholder="Bookmark Name"
+          class="form-control mb-4" />
+        <div id="nameAlert" class="alert alert-danger d-none my-2">
+          Name should be at least 3 characters
+        </div>
+        <i class="fas fa-link me-3"></i>
+        <label for="siteURLInput" class="mb-3 fw-bold">Site URL</label>
+        <input
+          type="text"
+          name="bookmarkURL"
+          oninput="validation('siteURLInput', 'url', 'urlAlert');"
+          id="siteURLInput"
+          placeholder="Website URL"
+          class="form-control mb-4" />
+        <div id="urlAlert" class="alert alert-danger d-none my-2">
+          url should be valid
+        </div>
+        <button
+          onclick="bookmarkSumbitHandler();"
+          class="btn btn-primary start-50 position-relative translate-middle-x mb-4">
+          Submit
+        </button>
+      </div>
+    </div>
+    <section>
+      <div class="container">
+        <table class="table">
+          <thead>
+            <tr class="text-center">
+              <th class="py-2">Index</th>
+              <th class="">Website Name</th>
+              <th class="">Visit</th>
+              <th class="">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="bookmarkTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
